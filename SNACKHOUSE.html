@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BorgirSnackHouse</title>
+</head>
+<body>
+    <h2>Order List</h2>
+    <script>
+        var burgCount = 0;
+        var burg = parseInt(prompt("Press 1 to Order, Press -1 to Exit: "));
+
+        while (burg != -1){
+            burgCount = burgCount + 1;
+            var regBurg = parseInt(prompt("How many Regular Burger: "));
+            var chisBurg = parseInt(prompt("How many Burger with Cheese: "));
+            var chisEg = parseInt(prompt("How many Burger with Cheese and Egg: "));
+            var Treg = 22 * regBurg;
+            var Tcb = 27 * chisBurg;
+            var Tce = 32 * chisEg;
+            var total = Treg + Tcb + Tce;
+            var burg = parseInt(prompt("Press 1 to Re-enter Order, Press -1 to Enter Discount: "));
+        }
+        if(burgCount != 0){
+            var discount = parseFloat(prompt("Enter discount: "));
+            if (discount == 10){
+                var dc = discount/100
+                var amount = total * dc;
+                var Tamount = total - amount;
+                document.write("Regular Burger: " +regBurg+ 
+                "<br>" +
+                "Burger with Cheese: " +chisBurg+ 
+                "<br>" +
+                "Burger with Cheese and Egg: " +chisEg+ 
+                "<br>" +
+                "Total discount: " +amount.toFixed(2)+ 
+                "<br>" +
+                "Total Amount: " +Tamount);
+            }else if (discount == 5){
+                var dc = discount/100
+                var amount = total * dc;
+                var Tamount = total - amount;
+                document.write("Regular Burger: " +regBurg+ 
+                "<br>" +
+                "Burger with Cheese: " +chisBurg+ 
+                "<br>" +
+                "Burger with Cheese and Egg: " +chisEg+ 
+                "<br>" +
+                "Total discount: " +amount.toFixed(2)+ 
+                "<br>" +
+                "Total Amount: " +Tamount);
+            }else if (discount == 0){
+                var dc = discount/100
+                var amount = total * dc;
+                var Tamount = total - amount;
+                document.write("Regular Burger: " +regBurg+ 
+                "<br>" +
+                "Burger with Cheese: " +chisBurg+ 
+                "<br>" +
+                "Burger with Cheese and Egg: " +chisEg+ 
+                "<br>" +
+                "Total discount: " +amount.toFixed(2)+ 
+                "<br>" +
+                "Total Amount: " +Tamount);
+            }else{
+                document.write("Invalid Discount Input")
+            }
+        }else {
+            var nothing = 0;
+            document.write("No Input were entered.");
+        }
+        
+    </script>
+</body>
+</html>
